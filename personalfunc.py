@@ -12,7 +12,13 @@ def escclicked(state,esc,keys):
                 state="mainmenu"
                 esc=120
     return state,esc
+# STATE RELEVANT
 
+def background(state):
+    if state=="mainmenu":
+        window.blit(textures["mainmenu"],(0,-HEIGHT//4))
+    if state=="playmenu":
+        window.fill((144,213,255))
 
 #BUTTON FUNCTIONS BELOW
 #BUTTON FUNCTIONS BELOW
@@ -25,14 +31,11 @@ def startbutton(args:list,permanants,type):
     if button_colision(textures[type].get_width(),textures[type].get_height(),permanants[0],permanants[1],args[0],args[1]):
         state="playmenu"
     return [state]
-# STATE RELEVANT
 
-def background(state):
-    if state=="mainmenu" or state=="playmenu":
-        window.blit(textures["mainmenu"],(0,-HEIGHT//4))
 def doublenumofplayers(args,permanants,type):
     state=args[2]
-    window.blit(textures[type],(permanants[0],permanants[1]))
-    if button_colision(textures[type].get_width(),textures[type].get_height(),permanants[0],permanants[1],args[0],args[1]):
-        state="playmenu"
+    
+    window.blit(textures)
+    #if button_colision(textures[type].get_width(),textures[type].get_height(),permanants[0],permanants[1],args[0],args[1]):
+    #    state="playmenu"
     return [state]
