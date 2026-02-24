@@ -25,17 +25,18 @@ def background(state):
 #BUTTON FUNCTIONS BELOW
 #BUTTON FUNCTIONS BELOW
 
-def startbutton(args:list,permanants,type):
+def startbutton(args:list,permanants,type,selfargs):
     state=args[2]
     window.blit(textures[type],(permanants[0],permanants[1]))
     if button_colision(textures[type].get_width(),textures[type].get_height(),permanants[0],permanants[1],args[0],args[1]):
         state="playmenu"
-    return [state]
+    return [state],selfargs
 
-def doublenumofplayers(args,permanants,type):
+def doublenumofplayers(args,permanants,type,selfargs):
     state=args[2]
     
-    window.blit(textures)
+    window.blit(textures[f'{selfargs[0]}'],textures[f'{selfargs[0]}'].get_rect(center=(permanants[0],permanants[1])))
+    window.blit(textures["less"],textures["less"].get_rect(center=(textures[f'{selfargs[0]}'].get_width()*1.5+permanants[0],permanants[1])))
     #if button_colision(textures[type].get_width(),textures[type].get_height(),permanants[0],permanants[1],args[0],args[1]):
     #    state="playmenu"
-    return [state]
+    return [state],selfargs

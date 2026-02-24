@@ -9,7 +9,7 @@ class Button:
         s.permanantargs[1]=s.permanantargs[1]-textures[s.type].get_height()//2
         s.selfargs=selfargs
     def doit(s,functionhash,args):
-        returnedargs=functionhash[s.type](args,s.permanantargs,s.type)
+        returnedargs,s.selfargs=functionhash[s.type](args,s.permanantargs,s.type,s.selfargs)
         return returnedargs
 lbuttons=[
     Button("intostartmenu",[WIDTH//2,HEIGHT//1.5],[]),

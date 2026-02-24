@@ -18,6 +18,8 @@ while state!="break":
     if state=="mainmenu" or state=="break":
         args=lbuttons[0].doit(functionhash,[mousePos,mouseState,state])
         state=args[0]
+    if state=="playmenu":
+        args=lbuttons[1].doit(functionhash,[mousePos,mouseState,state])
     # End what needs to be used
     pygame.display.update()
     clock.tick(60)
