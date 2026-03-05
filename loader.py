@@ -18,8 +18,9 @@ def load():
     textures["mainmenu"]=pygame.transform.scale(pygame.image.load("textures/menubackground.png"),(WIDTH,HEIGHT))
     textures["more"]=pygame.transform.scale(pygame.image.load("textures/more.png"),(WIDTH//20,HEIGHT//7))
     textures["less"]=pygame.transform.scale(pygame.image.load("textures/less.png"),(WIDTH//20,HEIGHT//7))
-    textures["font"]= pygame.font.SysFont('B', HEIGHT//20)
+    textures["font"]= pygame.font.SysFont('B', HEIGHT//5)
     for i in range(1,5):
         textures[f"{i}"]=textures["font"].render(f"{i}",False,(0,0,0))
+    textures["font"]= pygame.font.SysFont('B', int(HEIGHT//12.5))
     textures["numofplayers"]=textures["font"].render("Number of players",False,(0,0,0))
     return textures

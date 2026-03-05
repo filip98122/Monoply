@@ -1,9 +1,11 @@
 from classes import *
 state="mainmenu"
-esc=0
+esc=False
+clickedl=False
+holdingl=False
+clickedr=False
+holdingr=False
 while state!="break":
-    #Start what needs to be used
-    
     window.fill((144,213,255))
     background(state)
     keys = pygame.key.get_pressed()
@@ -13,13 +15,35 @@ while state!="break":
     for event in events:
         if event.type == pygame.QUIT:
             state="break"
+    #Start what needs to be used
+    
+    if esc and not keys[pygame.K_ESCAPE]:
+        esc=False
+    
+    if clickedl:
+        clickedl=False
+    if mouseState[0]:
+        if not holdingl:
+            clickedl=True
+        holdingl=True
+    else:
+        holdingl=False
+    if clickedr:
+        clickedr=False
+    if mouseState[1]:
+        if not holdingr:
+            clickedr=True
+        holdingr=True
+    else:
+        holdingr=False
+    
     state,esc=escclicked(state,esc,keys)
     # STATE RELEVANT
     if state=="mainmenu" or state=="break":
-        args=lbuttons[0].doit(functionhash,[mousePos,mouseState,state])
+        args=lbuttons[0].doit(functionhash,[mousePos,[clickedl],state])
         state=args[0]
     if state=="playmenu":
-        args=lbuttons[1].doit(functionhash,[mousePos,mouseState,state])
+        args=lbuttons[1].doit(functionhash,[mousePos,[clickedl],state])
     # End what needs to be used
     pygame.display.update()
     clock.tick(60)
