@@ -15,7 +15,16 @@ class Button:
         returnedargs,s.selfargs=functionhash[s.type](args,s.permanantargs,s.type,s.selfargs)
         return returnedargs
 lbuttons=[
-    Button("intostartmenu",[WIDTH//2,HEIGHT//1.5],[],[0,0]),
-    Button("numofplayers",[WIDTH//2,HEIGHT//2.5],[1],[textures["numofplayers"].get_width()//2,textures["numofplayers"].get_height()//2])
+    Button("intostartmenu",[WIDTH//2,HEIGHT//1.5],["playmenu"],[0,0]),
+    Button("intostartmenu",[WIDTH//2,HEIGHT//1.25],["game"],[0,0]),
+    Button("numofplayers",[WIDTH//2,HEIGHT//4],[0],[textures["numofplayers"].get_width()//2,textures["numofplayers"].get_height()//2]),
+    
+    [
+    Button("playerconfig",[WIDTH//2,HEIGHT//1.5],[0],[0,0])
+    
+    
+    ]
+
+    
 ]
-functionhash={"intostartmenu":startbutton,"numofplayers":doublenumofplayers}
+functionhash={"intostartmenu":startbutton,"numofplayers":doublenumofplayers,"playerconfig":playerconfig}
