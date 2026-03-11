@@ -77,6 +77,8 @@ def highlight(width,height,x,y,mousePos):
         return False
 
 def button_colision(width,height,x,y,mousePos,mouseState):
+    x-=width//2
+    y-=height//2
     if mousePos[0] > x and mousePos[0] < x + width and mousePos[1] > y and mousePos[1] < y + height and mouseState[0] == True:
         return True
     else:

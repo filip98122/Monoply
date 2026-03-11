@@ -46,10 +46,12 @@ while state!="break":
         args=lbuttons[2].doit(functionhash,[mousePos,[clickedl],state])
         args=lbuttons[1].doit(functionhash,[mousePos,[clickedl],state])
         state=args[0]
-        for i in range(len(lbuttons[3])):
+        for i in range(lbuttons[2].selfargs[0]+1):
             lbuttons[3][i].doit(functionhash,[mousePos,[clickedl],state])
+            # +1 jer je lb[2].slargs[0] indeksiran od 0
     elif state=="game":
-        pass
+        for i in range(lbuttons[2].selfargs[0]):
+            pass
     # End what needs to be used
     pygame.display.update()
     clock.tick(60)
