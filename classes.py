@@ -1,5 +1,12 @@
 from personalfunc import *
 #BUTTON AND WHAT GOES WITH IT
+class Player:
+    def __init__(s,troop,index,money,position):
+        s.troop=troop
+        s.index=index
+        s.money=money
+    def draw(s):
+        pass
 
 class Button:
     def __init__(s,type,permanantargs,selfargs,plus):
