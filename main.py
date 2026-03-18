@@ -5,6 +5,7 @@ clickedl=False
 holdingl=False
 clickedr=False
 holdingr=False
+hold=False
 while state!="break":
     window.fill((144,213,255))
     background(state)
@@ -50,8 +51,13 @@ while state!="break":
             lbuttons[3][i].doit(functionhash,[mousePos,[clickedl],state])
             # +1 jer je lb[2].slargs[0] indeksiran od 0
     elif state=="game":
-        for i in range(lbuttons[2].selfargs[0]):
-            pass
+        if keys[pygame.K_SPACE]:
+            if not hold:
+                p.pos+=1
+                hold=False
+        else:
+            hold=False
+        p.draw()
     # End what needs to be used
     pygame.display.update()
     clock.tick(60)
