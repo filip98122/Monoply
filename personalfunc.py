@@ -44,6 +44,10 @@ def playerconfig(args,permanants,type,selfargs):
     return returned,selfargs
 
 def doublenumofplayers(args,permanants,type,selfargs):
+    if type=="numofplayers":
+        mod=4
+    else:
+        mod=5
     state=args[2]
     window.blit( textures [f'{type}{selfargs[0]+1}'],textures[f'{type}{selfargs[0]+1}'].get_rect(center=(permanants[0],permanants[1])))
     window.blit( textures ["less"],textures["less"].get_rect(center=(permanants[0]-textures[f'{type}{selfargs[0]+1}'].get_width()*0.5-textures["less"].get_width()//1.5,permanants[1])))
@@ -61,21 +65,21 @@ def doublenumofplayers(args,permanants,type,selfargs):
                 selfargs[0]-=1
                 
         
-    selfargs[0]+=4
-    selfargs[0]%=4
+    selfargs[0]+=mod
+    selfargs[0]%=mod
     if button_colision(textures["more"].get_width(),
                        textures["more"].get_height(),
                        permanants[0]
                        +textures[f'{type}{selfargs[0]+1}'].get_width()*0.5
                        +textures["more"].get_width()//1.5,
                        permanants[1],args[0],args[1]):
-        
+    
         
     
         selfargs[0]+=1
         
         
     
-    selfargs[0]+=4
-    selfargs[0]%=4
+    selfargs[0]+=mod
+    selfargs[0]%=mod
     return [],selfargs

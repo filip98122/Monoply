@@ -31,11 +31,11 @@ def load():
     textures[f"playerconfig4"]=pygame.transform.scale(pygame.image.load("textures/hat.png"),(WIDTH// 10,HEIGHT//9))
     textures[f"playerconfig5"]=pygame.transform.scale(pygame.image.load("textures/shoe.png"),(WIDTH//10,HEIGHT//9))
 
-    textures[f"boardon10"]=pygame.transform.scale(pygame.image.load("textures/boattd.png"),(WIDTH//34,HEIGHT//17))
-    textures[f"boardon20"]=pygame.transform.scale(pygame.image.load("textures/cartd.png"),(WIDTH// 34,HEIGHT//17))
-    textures[f"boardon30"]=pygame.transform.scale(pygame.image.load("textures/dogtd.png"),(WIDTH// 34,HEIGHT//17))
-    textures[f"boardon40"]=pygame.transform.scale(pygame.image.load("textures/hattd.png"),(WIDTH// 34,HEIGHT//17))
-    textures[f"boardon50"]=pygame.transform.scale(pygame.image.load("textures/shoetd.png"),(WIDTH//34,HEIGHT//17))
+    textures[f"boardon10"]=pygame.transform.scale(pygame.image.load("textures/boattd.png"),(WIDTH//67,HEIGHT//17))
+    textures[f"boardon20"]=pygame.transform.scale(pygame.image.load("textures/cartd.png"), (WIDTH//67,HEIGHT//17))
+    textures[f"boardon30"]=pygame.transform.scale(pygame.image.load("textures/dogtd.png"), (WIDTH//67,HEIGHT//17))
+    textures[f"boardon40"]=pygame.transform.scale(pygame.image.load("textures/hattd.png"), (WIDTH//67,HEIGHT//17))
+    textures[f"boardon50"]=pygame.transform.scale(pygame.image.load("textures/shoetd.png"),(WIDTH//67,HEIGHT//17))
     for i in range(1,4):
         for j in range(5):
             textures[f"boardon{j+1}{i*90}"]=pygame.transform.rotate(textures[f"boardon{j+1}0"],(-(i*90)+360)%360)

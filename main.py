@@ -6,6 +6,7 @@ holdingl=False
 clickedr=False
 holdingr=False
 hold=False
+turn=0
 while state!="break":
     window.fill((144,213,255))
     background(state)
@@ -16,6 +17,7 @@ while state!="break":
     for event in events:
         if event.type == pygame.QUIT:
             state="break"
+            
     #Start what needs to be used
     
     if esc and not keys[pygame.K_ESCAPE]:
@@ -53,11 +55,12 @@ while state!="break":
     elif state=="game":
         if keys[pygame.K_SPACE]:
             if not hold:
-                p.pos+=1
-                hold=False
+                L_p[0].pos+=1
+                hold=True
         else:
             hold=False
-        p.draw()
+        for i in range(len(L_p)):
+            L_p[i].draw(L_p,turn)
     # End what needs to be used
     pygame.display.update()
     clock.tick(60)
